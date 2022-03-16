@@ -1,0 +1,263 @@
+@font-face {
+    font-family: Poppins-ExtraBold;
+    src: url(../fonts/Poppins-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Bold;
+    src: url(../fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Light;
+    src: url(../fonts/Poppins-Light.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url(../fonts/Roboto-Black.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff;
+}
+
+/****************************************************/
+
+#menu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 140%;
+    right: 0;
+    transition: .2s linear;
+}
+
+#menu.visible {
+    top: 0%;
+}
+
+#exit-menu {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 12;
+    top: 20px;
+    left: 20px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    transition: .2s linear;
+}
+
+#exit-menu:active {
+    transform: scale(.8);
+}
+
+#exit-menu svg {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 0 auto;
+}
+
+#exit-menu svg polyline {
+    stroke: #fff;
+    stroke-width: 3;
+    fill: none;
+}
+
+#menu-bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#menu section {
+    display: block;
+    width: 300px;
+    height: 280px;
+    position: relative;
+    top: 50%;
+    margin: -140px auto 0 auto;
+    z-index: 10;
+    overflow: hidden;
+}
+
+#menu a {
+    display: block;
+    width: 100%;
+    line-height: 70px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Poppins-Light, sans-serif;
+    font-weight: lighter;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: .2s linear;
+}
+
+#menu a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background: #ddd;
+    top: 100%;
+    left: 0;
+    transition: .2s linear;
+}
+
+#menu a.active::after {
+    top: 0%;
+}
+
+#menu a.active {
+    color: #111;
+}
+
+#menu a:hover::after {
+    top: 0%;
+}
+
+#menu a:hover {
+    color: #111;
+}
+
+@media only screen and (max-width: 700px){
+    
+    #menu a {
+        line-height: 60px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    
+    @media only screen and (max-width: 400px){
+        
+        #menu section {
+            width: 100%;
+            padding: 0 33px;
+        }
+        
+        #menu a {
+            font-size: 14px;
+        }
+    
+    }
+    
+}
+
+@media only screen and (max-height: 500px){
+    
+    #menu section {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        margin: 0;
+        padding: 100px 33px;
+        overflow: auto;
+    }
+    
+}
+
+/*********************************/
+
+#scroll-to-top {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 50%;
+    outline: 0;
+    background: blueviolet;
+    position: fixed;
+    z-index: 100;
+    bottom: 50px;
+    right: 50px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    transform-origin: center;
+    transition: .2s linear;
+}
+
+#scroll-to-top.visible {
+    display: block;
+}
+
+@supports (transform: scale(0)){
+    
+    #scroll-to-top {
+        display: block;
+        transform: scale(0);
+    }
+    
+    #scroll-to-top.visible {
+        transform: scale(1);
+    }
+    
+}
+
+#scroll-to-top:active {
+    transform: scale(1.1);
+}
+
+#scroll-to-top svg {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 0 auto;
+}
+
+#scroll-to-top svg polyline {
+    stroke: #fff;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media only screen and (max-width: 700px){
+    
+    #scroll-to-top {
+        width: 45px;
+        height: 45px;
+        right: 25px;
+    }
+    
+    #scroll-to-top svg {
+        width: 23px;
+        height: 23px;
+    }
+    
+}
