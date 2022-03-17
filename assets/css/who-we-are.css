@@ -139,7 +139,7 @@ main {
 
 .individual img {
     display: block;
-    height: 350px;
+    height: 360px;
     margin: 0 auto;
     margin-bottom: 30px;
     filter: drop-shadow(10px 0 10px rgba(0,0,0,.2));
